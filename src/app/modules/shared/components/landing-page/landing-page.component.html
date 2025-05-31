@@ -1,0 +1,85 @@
+<main>
+    <section class="topHead">
+        <div class="rightBox">
+            <select name="home" class="select1">
+                <option value="home">For Provider</option>
+                <option value="about">Hospital & Doctor login</option>
+            </select>|
+            <select title="select Language" (change)="changeLanguage($event)" [value]="language">
+                <option value="en" selected>English</option>
+                <option value="so" selected>Somali</option>
+            </select>|
+            <div class="text"><span>For Queries</span> 3177</div>
+        </div>
+    </section>
+
+    <!-- header starts here -->
+
+    <header class="header">
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./assets/images/profile_imgs/logo.png" alt="Company logo">
+                </a>
+            </div>
+
+            <div class="menu">
+                <a href="#.html">
+                    <span>Appointment</span>
+                    <small>Book an appointment</small>
+                </a>
+                <a [routerLink]="'/book-appointment'">
+                    <span>Video Consult</span>
+                    <small>Consult with top doctors</small>
+                </a>
+                <a href="#.html">
+                    <span>Home Care</span>
+                    <small>Home consultation</small>
+                </a>
+                <a href="#.html">
+                    <span>Pharmacy</span>
+                    <small>Buy medicines</small>
+                </a>
+                <a href="#.html">
+                    <span>Laboratory</span>
+                    <small>Book tests & checkups</small>
+                </a>
+                <a href="#.html">
+                    <span>About Shaafi</span>
+                    <small>Healthcare simplifies</small>
+                </a>
+            </div>
+
+            <div class="buttons">
+                <button (click)="handleLogin()" class="button">Login</button>
+                <button (click)="handleRegister()" class="button active">Sign up</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- header ends here -->
+
+    <section>
+        
+        <!-- Swiper start-->
+        <div class="swiper mySwiper1">
+            <div class="swiper-wrapper">
+                <div
+                    *ngFor="let slider of infoSlider;"
+                    class="swiper-slide sliders">
+                    <div class="text-content">
+                        <h2>{{slider?.title}}</h2>
+                        <p>{{slider?.text}}</p>
+                        <button>{{slider?.buttonText}}</button>
+                    </div>
+                    <div class="img-box">
+                        <img src="{{slider?.imageUrl}}" alt="{{slider?.imageAlt}}" />
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <!-- Swiper end-->
+
+    </section>
+</main>
